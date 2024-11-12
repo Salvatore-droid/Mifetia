@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+            <h2>
+                Hello there, I believe this belongs to my girlfriend so if in deed you are, 
+                just enter the special name that i usually call you so that you may view my message to you my love.
+                <i>this is her.</i>
+                <img src="mine.jpg" alt="">
+                <span>First letter should be capital and the rest should be lowercase.</span>
+            </h2>
+        </div>
+        <form id="input-name">
+            <label for="userInput">Enter the special name:</label>
+            <input type="text" id="userInput" placeholder="what's the special name?">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error"></p>
+        <a id="hiddenLink" href="lauren.html" style="display: none;">hello my star, click on this and view how important you are to me</a>
+    
+    <script>
+        document.getElementById('input-name').addEventListener('submit', function(event){
+            event.preventDefault()
+            var userInput = document.getElementById('userInput').value;
+            var correct = 'Mifetia';
+            if (userInput === correct){
+                document.getElementById("error").innerText = "Correct name, you're my Lauren(Mifetia)";
+                document.getElementById("hiddenLink").style.display = "block";
+            }else{
+                document.getElementById("error").innerText = "Are you sure you're my lauren, please try again";
+                document.getElementById("hiddenLink").style.display = "none";
+            }
+         });
+    </script>
+</body>
+</html>
