@@ -64,3 +64,23 @@ label{
 .container i{
     color: cyan;
 }
+@media only screen and (max-width: 412px ){
+    .container{
+        background: linear-gradient(rgb(211, 84, 205), rgb(101, 47, 163));
+        width: 300px;
+        border: 1px solid;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-left: 50px;
+    }
+    input{
+        border-radius: 10px;
+        width: 250px;
+        padding: 10px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
