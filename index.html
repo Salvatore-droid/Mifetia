@@ -27,13 +27,13 @@
     <script>
         document.getElementById('input-name').addEventListener('submit', function(event){
             event.preventDefault()
-            var userInput = document.getElementById('userInput').value;
+            var userInput = document.getElementById('userInput').value ;
             var correct = 'Mifetia';
             if (userInput === correct){
-                document.getElementById("error").innerText = "Correct name, you're my Lauren(Mifetia)";
+                document.getElementById("error").innerHTML = "Correct name, you're my Lauren(Mifetia)";
                 document.getElementById("hiddenLink").style.display = "block";
             }else{
-                document.getElementById("error").innerText = "Are you sure you're my lauren, please try again";
+                document.getElementById("error").innerHTML = "Are you sure you're my lauren, please try again";
                 document.getElementById("hiddenLink").style.display = "none";
             }
          });
