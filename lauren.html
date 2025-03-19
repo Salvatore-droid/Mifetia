@@ -3,47 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mifetia-My star</title>
-    <link rel="stylesheet" href="lauren.css">
+    <title>For My Love 💖</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles for Animations -->
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #ff69b4, #ff1493);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        .lyrics {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInOut 3s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .picture {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            animation: spin 10s linear infinite, shadow 3s ease-in-out infinite alternate;
+            display: none; /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes shadow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 20, 147, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .flower {
+                width: 30px;
+                height: 30px;
+            }
+
+            .lyrics {
+                font-size: 1.5rem;
+            }
+
+            .picture {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flower {
+                width: 20px;
+                height: 20px;
+            }
+
+            .lyrics {
+                font-size: 1.2rem;
+            }
+
+            .picture {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Background Music -->
     <audio id="background-music" loop autoplay>
         <source src="Justin Bieber - Anyone (Lyrics).mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <div class="container">
-        <h2>Scroll down to find me</h2>
-        <div class="envelope">
-            <div class="letter">
-                <img src="true.jpg" alt="">
-                <p><strong>Dear Love, <i>My Lauren</i>--I can't play a guitar but i can do this for you.</strong></p>
-                <p> 
-                    Dance with me under the diamonds, See me like breath in the cold.
-                    Sleep with me here in the silence, come kiss me silver and gold.
-                    You say that i won't loose you but you can't predict the future so just hold on like you would never let go.
-                    If you ever move on without me, I need to make sure you know,, that YOU, are the only one i'll ever love. I gotta tell you.
-                    Gotta tell you, yeah YOU, if it's not you it's not anyone, looking back on my life you're the only good i've ever done.It's YOU, 
-                    if it's not you it's not anyone.
-                </p>
-                <p>
-                    Before there was not enough time to love you the way that i want, cause every morning i find you i feel the day that i done.
-                    You say that i won't loose you but you can't predict the future  cause certain things are out of our control, If you ever move on without me,
-                    I need to make sure you know. YOU, are the only one i'll ever love, YOU,, if it's not you it's not anyone, looking back on my life
-                    you're the only good I've ever done. If it's not you it's not anyone.IF IT"S NOT YOU IT"S NOT ANYONE.
-                    <strong><i>MIFETIA--my shooting star, <span>I love you.</span></i></strong>
-                </p>
-            </div>
-        </div>
-        <div class="heart"><img src="i and her.jpg" alt=""></div>
-        <h4><i>Tap below me to view</i></h4>
+    <!-- Flower Animations -->
+    <div class="flower" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="flower" style="top: 30%; left: 70%; animation-delay: 1s;"></div>
+    <div class="flower" style="top: 50%; left: 40%; animation-delay: 2s;"></div>
+    <div class="flower" style="top: 70%; left: 80%; animation-delay: 3s;"></div>
+    <div class="flower" style="top: 90%; left: 10%; animation-delay: 4s;"></div>
+
+    <!-- Lyrics Display -->
+    <div class="lyrics" id="lyrics">
+        <p>Dance with me under the diamonds...</p>
     </div>
+
+    <!-- Picture Display -->
+    <img src="true.jpg" alt="Our Picture" class="picture" id="picture">
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
     <script>
-        const envelope = document.querySelector('.envelope');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-        });
+        const lyrics = [
+            "Dance with me under the diamonds...",
+            "See me like breath in the cold...",
+            "Sleep with me here in the silence...",
+            "Come kiss me silver and gold...",
+            "You say that I won't lose you...",
+            "But you can't predict the future...",
+            "So just hold on like you would never let go...",
+            "If you ever move on without me...",
+            "I need to make sure you know...",
+            "YOU are the only one I'll ever love...",
+            "Gotta tell you, yeah YOU...",
+            "If it's not you, it's not anyone...",
+            "Looking back on my life...",
+            "You're the only good I've ever done...",
+            "It's YOU, if it's not you, it's not anyone...",
+            "Before, there was not enough time...",
+            "To love you the way that I want...",
+            "'Cause every morning I find you...",
+            "I feel the day that I've won...",
+            "You say that I won't lose you...",
+            "But you can't predict the future...",
+            "'Cause certain things are out of our control...",
+            "If you ever move on without me...",
+            "I need to make sure you know...",
+            "YOU are the only one I'll ever love...",
+            "YOU, if it's not you, it's not anyone...",
+            "Looking back on my life...",
+            "You're the only good I've ever done...",
+            "If it's not you, it's not anyone...",
+            "IF IT'S NOT YOU, IT'S NOT ANYONE..."
+        ];
+
+        const lyricsElement = document.getElementById('lyrics');
+        const pictureElement = document.getElementById('picture');
+        let index = 0;
+
+        const interval = setInterval(() => {
+            if (index < lyrics.length) {
+                lyricsElement.innerHTML = `<p>${lyrics[index]}</p>`;
+                index++;
+            } else {
+                // Lyrics ended, show the picture
+                clearInterval(interval);
+                lyricsElement.style.display = 'none';
+                pictureElement.style.display = 'block';
+            }
+        }, 3000); // Change lyrics every 3 seconds
     </script>
 </body>
 </html>
-

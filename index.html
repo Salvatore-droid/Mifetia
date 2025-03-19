@@ -3,40 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>For My Love</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-        <div class="container">
-            <h2>
-                Hello there, I believe this belongs to my girlfriend so if in deed you are, 
-                just enter the special name that i usually call you so that you may view my message to you my love.
-                <i>this is her.</i>
-                <img src="mine.jpg" alt="">
-                <span>First letter should be capital and the rest should be lowercase.</span>
-            </h2>
+<body class="bg-dark">
+    <!-- Full-height container with centered content -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="text-center">
+            <!-- Romantic Card -->
+            <div class="card p-4 border-0 bg-gradient" style="background: linear-gradient(135deg, rgba(211, 84, 205, 0.9), rgba(101, 47, 163, 0.9)); border-radius: 15px;">
+                <!-- Main Heading with Color and Shadow -->
+                <h2 class="mb-4 display-4 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                    My Dearest Love 💖
+                </h2>
+                <!-- Romantic Paragraph with Color -->
+                <p class="lead text-warning">
+                    You are the light that brightens my darkest days, the melody that soothes my soul, and the reason my heart beats with joy. Every moment with you feels like a dream I never want to wake up from.
+                </p>
+                <!-- Subtext with Color -->
+                <p class="text-info">
+                    To prove that you're truly the one who holds my heart, enter the special name I call you—the name that carries all my love and devotion.
+                </p>
+                <!-- Italic Text with Color and Shadow -->
+                <i class="d-block mt-3 text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">This is you, my everything. 🌹</i>
+                <!-- Responsive Image -->
+                <img src="mine.jpg" alt="My Love" class="img-fluid rounded-circle mt-3 shadow" style="width: 120px; height: 120px; border: 3px solid white;object-fit: cover;">
+                <!-- Hint Text with Color -->
+                <span class="d-block mt-3 text-white-50">(Hint: The first letter should be capital, and the rest lowercase.)</span>
+            </div>
+
+            <!-- Romantic Form -->
+            <form id="input-name" class="mt-4">
+                <div class="form-group">
+                    <!-- Label with Color -->
+                    <label for="userInput" class="form-label text-white">Enter the special name I call you:</label>
+                    <!-- Responsive Input Field -->
+                    <input type="text" id="userInput" class="form-control form-control-lg" placeholder="What's the name only I call you?">
+                </div>
+                <!-- Responsive Button with Color -->
+                <button type="submit" class="btn btn-light btn-lg mt-3 w-100 fw-bold text-primary">Unlock My Heart</button>
+            </form>
+
+            <!-- Messages -->
+            <p id="error" class="mt-3 fst-italic text-warning" style="text-shadow: 1px 1px 2px rgba(255, 193, 7, 0.5);"></p>
+            <!-- Hidden Link with Color -->
+            <a id="hiddenLink" href="lauren.html" class="d-none btn btn-outline-light btn-lg mt-3 w-100 fw-bold text-success">My Love, click here to see how much you mean to me 💌</a>
         </div>
-        <form id="input-name">
-            <label for="userInput">Enter the special name:</label>
-            <input type="text" id="userInput" placeholder="what's the special name?">
-            <button type="submit">Submit</button>
-        </form>
-        <p id="error"></p>
-        <a id="hiddenLink" href="lauren.html" style="display: none;">hello my star, click on this and view how important you are to me</a>
-    
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script>
         document.getElementById('input-name').addEventListener('submit', function(event){
-            event.preventDefault()
-            var userInput = document.getElementById('userInput').value ;
-            var correct = 'Mifetia';
+            event.preventDefault();
+            var userInput = document.getElementById('userInput').value;
+            var correct = 'Mifetia'; // Replace with the special name
             if (userInput === correct){
-                document.getElementById("error").innerHTML = "Correct name, you're my Lauren(Mifetia)";
-                document.getElementById("hiddenLink").style.display = "block";
-            }else{
-                document.getElementById("error").innerHTML = "Are you sure you're my lauren, please try again";
-                document.getElementById("hiddenLink").style.display = "none";
+                document.getElementById("error").innerHTML = "You are my everything, my Lauren (Mifetia). 💖";
+                document.getElementById("hiddenLink").classList.remove("d-none");
+            } else {
+                document.getElementById("error").innerHTML = "Hmm, are you sure you're my one and only? Try again, my love. 💕";
+                document.getElementById("hiddenLink").classList.add("d-none");
             }
-         });
+        });
     </script>
 </body>
 </html>
